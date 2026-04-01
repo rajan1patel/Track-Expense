@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Explicitly handle the dark class on the html/root element */
+:root.dark {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #030712; /* Matches gray-950 */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Ensure Tailwind's dark variant is triggered by the .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
